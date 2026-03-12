@@ -38,7 +38,9 @@ public class PalindromeCheckerApp {
         return str.equals(reversed);
     }
 
-    public static void main(String[] args) {
+                        // Convert string to character array
+                        char[] charArray = str.toCharArray();
+                        boolean isPalindrone = true;
 
         Scanner scanner = new Scanner(System.in);
 
