@@ -1,42 +1,22 @@
 public class PalindroneCheckerApp {
-    static void main() {
-        String str = "madam";
-        boolean isPalindrone = true;
-        int start = 0;
-        for (int i = str.length() - 1; i > 0; i--) {
-            if (str.charAt(i) != str.charAt(start)) {
-                isPalindrone = false;
-                break;
-
-                public class PalindroneCheckerApp {
-                    public static void main(String[] args) {
-                        String str = "level";
-
-                        // Convert string to character array
-                        char[] charArray = str.toCharArray();
-                        boolean isPalindrone = true;
-
-                        // Use two-pointer approach
-                        int start = 0;
-                        int end = charArray.length - 1;
-
-                        while (start < end) {
-                            if (charArray[start] != charArray[end]) {
-                                isPalindrone = false;
-                                break;
-                            }
-                            start++;
-                            end--;
+    static void main(){
+        static void main() {
+            String str = "madam";
+            boolean isPalindrone = true;
+            for (int i=0; i<str.length()/ 2; i++) {
+                if (str.charAt(i) != str.charAt(str.length() -1 - i)) {
+                    int start = 0;
+                    for (int i = str.length() - 1; i > 0; i--) {
+                        if (str.charAt(i) != str.charAt(start)) {
+                            isPalindrone = false;
+                            break;
                         }
-
-                        // Display result
-                        if (isPalindrone) {
-                            System.out.println(str + " is a palindrone.");
-                        } else {
-                            System.out.println(str + " is not a palindrone.");
-                        }
+                    }
+                    if (isPalindrone){
+                        System.out.println(str +"is palindrine");
+                    } else {
+                        System.out.println(str +"is not a palindrone");
                         start++;
                     }
                 }
             }
-        }
