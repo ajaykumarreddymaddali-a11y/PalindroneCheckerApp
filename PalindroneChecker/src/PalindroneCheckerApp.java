@@ -22,7 +22,9 @@ class PalindromeChecker {
 
 public class PalindromeCheckerApp {
 
-    public static void main(String[] args) {
+                        // Convert string to character array
+                        char[] charArray = str.toCharArray();
+                        boolean isPalindrone = true;
 
         Scanner sc = new Scanner(System.in);
 
