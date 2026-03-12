@@ -1,8 +1,12 @@
 import java.util.Scanner;
 
-public class PalindromeCheckerApp {
+                public class PalindroneCheckerApp {
+                    public static void main(String[] args) {
+                        String str = "level";
 
-    public static void main(String[] args) {
+                        // Convert string to character array
+                        char[] charArray = str.toCharArray();
+                        boolean isPalindrone = true;
 
         Scanner sc = new Scanner(System.in);
 
