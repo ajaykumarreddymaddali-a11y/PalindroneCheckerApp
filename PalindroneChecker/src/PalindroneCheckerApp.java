@@ -1,22 +1,15 @@
-public class PalindroneCheckerApp {
+public class PalindromeCheckerApp {
     static void main(){
-        static void main() {
-            String str = "madam";
-            boolean isPalindrone = true;
-            for (int i=0; i<str.length()/ 2; i++) {
-                if (str.charAt(i) != str.charAt(str.length() -1 - i)) {
-                    int start = 0;
-                    for (int i = str.length() - 1; i > 0; i--) {
-                        if (str.charAt(i) != str.charAt(start)) {
-                            isPalindrone = false;
-                            break;
-                        }
-                    }
-                    if (isPalindrone){
-                        System.out.println(str +"is palindrine");
-                    } else {
-                        System.out.println(str +"is not a palindrone");
-                        start++;
-                    }
-                }
-            }
+        System.out.println("Welcome to the Palindrome Checker Management System");
+        System.out.println("Version : 1.0");
+        System.out.println("System initialized successfully  ");
+
+        String word = "madam";
+        String reversed = new StringBuilder(word).reverse().toString();
+        if (word.equals(reversed)) {
+            System.out.println(word + " is a palindrome.");
+        } else {
+            System.out.println(word + " is not a palindrome.");
+        }
+    }
+}
