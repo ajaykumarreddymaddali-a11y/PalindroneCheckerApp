@@ -1,25 +1,15 @@
-
 public class PalindromeCheckerApp {
-
-    public static void main(String[] args) {
+    static void main(){
+        System.out.println("Welcome to the Palindrome Checker Management System");
+        System.out.println("Version : 1.0");
+        System.out.println("System initialized successfully  ");
 
         String word = "madam";
-        java.util.Stack<Character> stack = new java.util.Stack<>();
-
-        for (int i = 0; i < word.length(); i++) {
-            stack.push(word.charAt(i));
-        }
-
-        String reversed = "";
-
-        while (!stack.isEmpty()) {
-            reversed = reversed + stack.pop();
-        }
-
+        String reversed = new StringBuilder(word).reverse().toString();
         if (word.equals(reversed)) {
-            System.out.println(word + " is a palindrome");
+            System.out.println(word + " is a palindrome.");
         } else {
-            System.out.println(word + " is not a palindrome");
+            System.out.println(word + " is not a palindrome.");
         }
     }
 }
