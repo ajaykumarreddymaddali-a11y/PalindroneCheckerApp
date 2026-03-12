@@ -1,55 +1,43 @@
-import java.util.LinkedList;
-import java.util.Queue;
+import java.util.ArrayDeque;
+import java.util.Deque;
 import java.util.Scanner;
-import java.util.Stack;
 
-public class PalindromeCheckerApp {
-    static void main(){
-        System.out.println("Welcome to the Palindrome Checker Management System");
-        System.out.println("Version : 1.0");
-        System.out.println("System initialized successfully  ");
+public class PalindroneCheckerApp {
 
-        public static void main(String[] args) {
+    public static void main(String[] args) {
 
-            Scanner scanner = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
 
-            System.out.println("===== UC6: Queue + Stack Based Palindrome Checker =====");
-            System.out.print("Enter a string: ");
-            String input = scanner.nextLine();
+        System.out.println("===== UC7: Deque-Based Optimized Palindrome Checker =====");
+        System.out.print("Enter a string: ");
+        String input = scanner.nextLine();
 
-            // Remove spaces and convert to lowercase
-            input = input.replaceAll("\\s+", "").toLowerCase();
+        input = input.replaceAll("\\s+", "").toLowerCase();
 
-            Queue<Character> queue = new LinkedList<>();
-            Stack<Character> stack = new Stack<>();
+        Deque<Character> deque = new ArrayDeque<>();
 
-            // Enqueue and Push characters
-            for (int i = 0; i < input.length(); i++) {
-                char ch = input.charAt(i);
-                queue.add(ch);     // Enqueue (FIFO)
-                stack.push(ch);    // Push (LIFO)
-            }
-
-            boolean isPalindrome = true;
-
-            // Compare dequeue (queue) and pop (stack)
-            while (!queue.isEmpty()) {
-                char fromQueue = queue.remove();  // Dequeue
-                char fromStack = stack.pop();     // Pop
-
-                if (fromQueue != fromStack) {
-                    isPalindrome = false;
-                    break;
-                }
-            }
-
-            // Display result
-            if (isPalindrome) {
-                System.out.println("Result: The string is a Palindrome ✅");
-            } else {
-                System.out.println("Result: The string is NOT a Palindrome ❌");
-            }
-
-            scanner.close();
+        for (int i = 0; i < input.length(); i++) {
+            deque.addLast(input.charAt(i));
         }
+
+        boolean isPalindrome = true;
+
+        while (deque.size() > 1) {
+            char front = deque.removeFirst();
+            char rear = deque.removeLast();
+
+            if (front != rear) {
+                isPalindrome = false;
+                break;
+            }
+        }
+
+        if (isPalindrome) {
+            System.out.println("Result: The string is a Palindrome ✅");
+        } else {
+            System.out.println("Result: The string is NOT a Palindrome ❌");
+        }
+
+        scanner.close();
     }
+}
