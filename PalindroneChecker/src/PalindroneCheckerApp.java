@@ -1,25 +1,22 @@
-
-public class PalindromeCheckerApp {
-
-    public static void main(String[] args) {
-
-        String word = "madam";
-        java.util.Stack<Character> stack = new java.util.Stack<>();
-
-        for (int i = 0; i < word.length(); i++) {
-            stack.push(word.charAt(i));
-        }
-
-        String reversed = "";
-
-        while (!stack.isEmpty()) {
-            reversed = reversed + stack.pop();
-        }
-
-        if (word.equals(reversed)) {
-            System.out.println(word + " is a palindrome");
-        } else {
-            System.out.println(word + " is not a palindrome");
-        }
-    }
-}
+public class PalindroneCheckerApp {
+    static void main(){
+        static void main() {
+            String str = "madam";
+            boolean isPalindrone = true;
+            for (int i=0; i<str.length()/ 2; i++) {
+                if (str.charAt(i) != str.charAt(str.length() -1 - i)) {
+                    int start = 0;
+                    for (int i = str.length() - 1; i > 0; i--) {
+                        if (str.charAt(i) != str.charAt(start)) {
+                            isPalindrone = false;
+                            break;
+                        }
+                    }
+                    if (isPalindrone){
+                        System.out.println(str +"is palindrine");
+                    } else {
+                        System.out.println(str +"is not a palindrone");
+                        start++;
+                    }
+                }
+            }
