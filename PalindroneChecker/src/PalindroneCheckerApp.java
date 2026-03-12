@@ -1,43 +1,33 @@
-import java.util.ArrayDeque;
-import java.util.Deque;
 import java.util.Scanner;
 
-public class PalindroneCheckerApp {
+                public class PalindroneCheckerApp {
+                    public static void main(String[] args) {
+                        String str = "level";
 
-    public static void main(String[] args) {
+                        // Convert string to character array
+                        char[] charArray = str.toCharArray();
+                        boolean isPalindrone = true;
 
-        Scanner scanner = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
 
-        System.out.println("===== UC7: Deque-Based Optimized Palindrome Checker =====");
-        System.out.print("Enter a string: ");
-        String input = scanner.nextLine();
+        System.out.print("Input: ");
+        String input = sc.nextLine();
 
-        input = input.replaceAll("\\s+", "").toLowerCase();
-
-        Deque<Character> deque = new ArrayDeque<>();
-
-        for (int i = 0; i < input.length(); i++) {
-            deque.addLast(input.charAt(i));
-        }
+        // Normalize string: remove spaces and convert to lowercase
+        String normalized = input.replaceAll("[^a-zA-Z0-9]", "").toLowerCase();
 
         boolean isPalindrome = true;
 
-        while (deque.size() > 1) {
-            char front = deque.removeFirst();
-            char rear = deque.removeLast();
-
-            if (front != rear) {
+        // Compare characters from both ends
+        for (int i = 0; i < normalized.length() / 2; i++) {
+            if (normalized.charAt(i) != normalized.charAt(normalized.length() - 1 - i)) {
                 isPalindrome = false;
                 break;
             }
         }
 
-        if (isPalindrome) {
-            System.out.println("Result: The string is a Palindrome ✅");
-        } else {
-            System.out.println("Result: The string is NOT a Palindrome ❌");
-        }
+        System.out.println("Is Palindrome: " + isPalindrome);
 
-        scanner.close();
+        sc.close();
     }
 }
