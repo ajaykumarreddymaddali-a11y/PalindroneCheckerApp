@@ -1,25 +1,42 @@
+public class PalindroneCheckerApp {
+    static void main() {
+        String str = "madam";
+        boolean isPalindrone = true;
+        int start = 0;
+        for (int i = str.length() - 1; i > 0; i--) {
+            if (str.charAt(i) != str.charAt(start)) {
+                isPalindrone = false;
+                break;
 
-public class PalindromeCheckerApp {
+                public class PalindroneCheckerApp {
+                    public static void main(String[] args) {
+                        String str = "level";
 
-    public static void main(String[] args) {
+                        // Convert string to character array
+                        char[] charArray = str.toCharArray();
+                        boolean isPalindrone = true;
 
-        String word = "madam";
-        java.util.Stack<Character> stack = new java.util.Stack<>();
+                        // Use two-pointer approach
+                        int start = 0;
+                        int end = charArray.length - 1;
 
-        for (int i = 0; i < word.length(); i++) {
-            stack.push(word.charAt(i));
+                        while (start < end) {
+                            if (charArray[start] != charArray[end]) {
+                                isPalindrone = false;
+                                break;
+                            }
+                            start++;
+                            end--;
+                        }
+
+                        // Display result
+                        if (isPalindrone) {
+                            System.out.println(str + " is a palindrone.");
+                        } else {
+                            System.out.println(str + " is not a palindrone.");
+                        }
+                        start++;
+                    }
+                }
+            }
         }
-
-        String reversed = "";
-
-        while (!stack.isEmpty()) {
-            reversed = reversed + stack.pop();
-        }
-
-        if (word.equals(reversed)) {
-            System.out.println(word + " is a palindrome");
-        } else {
-            System.out.println(word + " is not a palindrome");
-        }
-    }
-}
